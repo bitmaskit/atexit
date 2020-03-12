@@ -12,13 +12,13 @@ func Run(f func()) {
 	exitFuncs = append(exitFuncs, f)
 }
 
-func callExitFuncs() {
+func CallExitFuncs() {
 	for i := len(exitFuncs) - 1; i >= 0; i-- {
 		exitFuncs[i]()
 	}
 }
 
-func trapSignals() {
+func TrapSignals() {
 	c := make(chan os.Signal, 1)
 	signal.Notify(c, syscall.SIGINT, syscall.SIGTERM)
 	go func() {
