@@ -23,7 +23,7 @@ func TrapSignals() {
 	signal.Notify(c, syscall.SIGINT, syscall.SIGTERM)
 	go func() {
 		<-c
-		callExitFuncs()
+		CallExitFuncs()
 		os.Exit(1)
 	}()
 }
