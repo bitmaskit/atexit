@@ -1,0 +1,1 @@
+Simple at exit package for Go.
